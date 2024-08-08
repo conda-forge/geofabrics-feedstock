@@ -1,5 +1,5 @@
 {% set name = "geofabrics" %}
-{% set version = "1.1.18" %}
+{% set version = "1.1.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/geofabrics-{{ version }}.tar.gz
-  sha256: 8eb61a9b4b412e92eb7ef8d5c534bd3ef74250ac963802a993e5b94943ce66a4
+  sha256: e8cfc008b96880b5a5d7a85634281d531e31fed70c3bb3d547b9d25a17bdc547
 
 build:
   noarch: python
@@ -25,7 +25,7 @@ requirements:
     - pip
   run:
     - python >=3.9
-    - dask
+    - dask-core
     - distributed
     - gdal
     - geopandas >=0.10
