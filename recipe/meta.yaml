@@ -1,13 +1,14 @@
 {% set name = "geofabrics" %}
-{% set version = "1.1.23" %}
+{% set version = "1.1.24" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/geofabrics-{{ version }}.tar.gz
-  sha256: 98629a035fd99091dc256f2c5eb8a3bfb4dc6477871f93a1d09d000487b0b90d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geofabrics-{{ version }}.tar.gz
+  sha256: 814a34b06968703ed822cb860428632b4daf01534e2a363f78004d478454815c
 
 build:
   noarch: python
@@ -19,12 +20,12 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=64
     - wheel
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - dask-core
     - distributed
     - gdal
@@ -44,6 +45,7 @@ test:
     - geofabrics_from_file --help
     - geofabrics_from_dict --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
