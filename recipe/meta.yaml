@@ -1,5 +1,5 @@
 {% set name = "geofabrics" %}
-{% set version = "1.1.24" %}
+{% set version = "1.1.25" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geofabrics-{{ version }}.tar.gz
-  sha256: 814a34b06968703ed822cb860428632b4daf01534e2a363f78004d478454815c
+  sha256: 37d92fae0212d4e341e635c4863608153b1a99ac284dcd09422e111164dce485
 
 build:
   noarch: python
